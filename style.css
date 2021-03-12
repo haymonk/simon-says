@@ -55,6 +55,12 @@ button {
   background:yellow;
 }
 
+#button5 {
+  background: white;
+}
+#button5:active, #button5.lit {
+  background:gray;
+}
 
 
 

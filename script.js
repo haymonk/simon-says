@@ -10,14 +10,14 @@ var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
 var strikes = 0;
-var clueHoldTime = 1000; //how long to hold each clue's light/sound
+var clueHoldTime = 900; //how long to hold each clue's light/sound
 
 
 function startGame(){
     //initialize game variables
     progress = 0;
     strikes = 0;
-    clueHoldTime = 1000;
+    clueHoldTime = 900;
     gamePlaying = true;
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden")
@@ -92,10 +92,10 @@ function playSingleClue(btn){
 function playClueSequence(){
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
+  clueHoldTime -= 100;
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
-    clueHoldTime -= 20;
     delay += clueHoldTime;
     delay += cluePauseTime;
   }
@@ -160,6 +160,7 @@ function guess(btn){
     strikes += 1
     if(strikes < 3){
       progress == 0;
+      clueHoldTime += 100
       playClueSequence();
       alert("Strike " + strikes + ". Try the sequence again.")
     }else{

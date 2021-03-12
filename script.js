@@ -10,13 +10,13 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
-
-
+var strikes = 0;
 
 
 function startGame(){
     //initialize game variables
     progress = 0;
+    strikes = 0;
     gamePlaying = true;
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden")
@@ -85,6 +85,7 @@ function playSingleClue(btn){
   }
 }
 
+
 function playClueSequence(){
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
@@ -95,6 +96,27 @@ function playClueSequence(){
     delay += cluePauseTime;
   }
 }
+
+
+
+/*
+function playClueSequence(){
+  guessCounter = 0;
+  let delay = nextClueWaitTime; //set delay to initial wait time
+  for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
+    console.log("play single clue: " + getRandomSequence(1,4) + " in " + delay + "ms")
+    setTimeout(playSingleClue,delay,getRandomSequence(1,4)) // set a timeout to play that clue
+    delay += clueHoldTime 
+    delay += cluePauseTime;
+  }
+}
+
+function getRandomSequence(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+*/
 
 // Conclusion
 function loseGame(){
@@ -131,7 +153,14 @@ function guess(btn){
     }
   }else{
     //Guess was incorrect
-    //GAME OVER: LOSE!
-    loseGame();
+    strikes += 1
+    if(strikes < 3){
+      progress == 0;
+      playClueSequence();
+      alert("Strike " + strikes + ". Try the sequence again.")
+    }else{
+      //GAME OVER: LOSE!
+      loseGame();
+    }
   }
 }

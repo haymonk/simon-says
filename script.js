@@ -1,5 +1,4 @@
 // global constants
-const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 
@@ -11,12 +10,14 @@ var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
 var strikes = 0;
+var clueHoldTime = 1000; //how long to hold each clue's light/sound
 
 
 function startGame(){
     //initialize game variables
     progress = 0;
     strikes = 0;
+    clueHoldTime = 1000;
     gamePlaying = true;
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden")
@@ -94,7 +95,8 @@ function playClueSequence(){
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
-    delay += clueHoldTime 
+    clueHoldTime -= 20;
+    delay += clueHoldTime;
     delay += cluePauseTime;
   }
 }

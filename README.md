@@ -25,10 +25,10 @@ The following **optional** features are implemented:
 * [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
 * [x] Buttons use a pitch (frequency) other than the ones in the tutorial
 * [x] More than 4 functional game buttons
-* [ ] Playback speeds up on each turn
+* [x] Playback speeds up on each turn
 * [ ] Computer picks a different pattern each time the game is played
 * [x] Player only loses after 3 mistakes (instead of on the first mistake)
-* [ ] Game button appearance change goes beyond color (e.g. add an image)
+* [x] Game button appearance change goes beyond color (e.g. add an image)
 * [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
 * [ ] User has a limited amount of time to enter their guess on each turn
 
@@ -45,7 +45,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-Aside from the additional links provided in the tutorial, such as w3schools.com for CSS fonts or about the JS library and synthesizing sound, no other resources were utilized.
+Aside from the additional links provided in the tutorial, such as w3schools.com for CSS fonts or about the JS library and synthesizing sound, the other resource I used was by GeeksForGeeks to customize each button with an image upon clicking it (https://www.geeksforgeeks.org/how-to-change-an-input-button-image-using-css/). Instead of following their guide for loading an image upon hovering a button, I altered it to load an image upon clicking and activating a button.
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 The greatest challenge was implementing the code behind the guess button without assistance. Though the logic seemed simple, it was more difficult to write code in ways that the computer could understand. First, I had to write out step-by-step the possible paths that could come from guessing (e.g. correct/incorrect, the last guess, winning, etc.). While the provided flow chart helped me walk through the logic, I determined how to write my code by identifying the edge cases, with the simplest one being if the player guessed incorrectly. If a player guessed wrong, then the game automatically ended. This was the fastest case and thus became the outermost conditional statement in my program. However, if the player guessed correctly, then I had to use a variable that could store the progress of each guess. Implementing this "progress" proved to be challenging as I was initially unsure of how to tie this with "guessCounter". Eventually, I broke down each step and tried to think of what could be the next outermost conditional statement, essentially the "bigger picture". Overall, though nested conditional statements proved to be the most challenging, taking a step back and slowly dissecting each process made the code easier to implement. Rather than coding arbitrarily, utilizing the provided flow chart along with writing out my own on the side helped me determine the proper sequence and code needed to correctly implement the guesses.

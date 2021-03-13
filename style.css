@@ -33,7 +33,9 @@ button {
 #button1:active, #button1.lit {
   background:green;
   background-image:url('https://cdn.glitch.com/7f91c615-b89a-4cdc-86b9-b6ce9da76cc6%2Fkisspng-liverpool-f-c-reserves-and-academy-anfield-englis-5b2c4a5607a0b7.1462805215296292700313.png?v=1615590881053');
-  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
 }
 
 #button2 {
@@ -42,8 +44,9 @@ button {
 #button2:active, #button2.lit {
   background:blue;
   background-image:url('https://cdn.glitch.com/7f91c615-b89a-4cdc-86b9-b6ce9da76cc6%2Fkisspng-manchester-city-f-c-manchester-city-w-f-c-premie-manchester-city-logo-5b2ce2d54687f1.1769225015296683092889.png?v=1615590329394');
-  background-size:cover;
-}
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;}
 
 #button3 {
   background: pink;
@@ -51,8 +54,9 @@ button {
 #button3:active, #button3.lit {
   background:red;
   background-image:url('https://cdn.glitch.com/7f91c615-b89a-4cdc-86b9-b6ce9da76cc6%2Fmanutd.png?v=1615587796223');
-  background-size:cover;
-}
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;}
 
 #button4 {
   background: lightyellow;
@@ -60,8 +64,9 @@ button {
 #button4:active, #button4.lit {
   background:yellow;
   background-image:url('https://cdn.glitch.com/7f91c615-b89a-4cdc-86b9-b6ce9da76cc6%2Fkisspng-premier-league-uefa-champions-league-manchester-ci-premier-league-trophy-5b20d031695c54.2760159215288771054316.png?v=1615602460228');
-  background-size:cover;
-}
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;}
 
 #button5 {
   background: white;
@@ -69,7 +74,9 @@ button {
 #button5:active, #button5.lit {
   background:gray;
   background-image:url('https://cdn.glitch.com/7f91c615-b89a-4cdc-86b9-b6ce9da76cc6%2Fkisspng-tottenham-hotspur-f-c-premier-league-northumberla-reza-afandy-rezhacfc-free-image-hosting-5b630a735335a8.6510932715332173953408.png?v=1615590067259');
-  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
 }
 
 
